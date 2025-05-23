@@ -12,8 +12,14 @@ MODEL_PATH  = 'modelo_notas.h5'
 SCALER_PATH = 'scaler_notas.pkl'
 DATA_PATH   = 'data/notas_estudiantes.csv'
 
-model  = tf.keras.models.load_model(MODEL_PATH)
+model = tf.keras.models.load_model(MODEL_PATH, compile=False)
 scaler = joblib.load(SCALER_PATH)
+
+model.compile(
+    optimizer='adam',
+    loss='mse',
+    metrics=['mae']
+)
 
 # Carga datos para calcular MAE, RMSE y margen de error
 df = pd.read_csv(DATA_PATH, sep=';')
