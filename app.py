@@ -53,7 +53,7 @@ parciales = st.sidebar.number_input(
     "Puntaje en Parciales", min_value=0, max_value=30, value=26
 )
 a_val     = st.sidebar.number_input(
-    "Puntaje en A", min_value=0, max_value=30, value=24
+    "Puntaje en Actividades", min_value=0, max_value=30, value=24
 )
 btn       = st.sidebar.button("▶️ Predecir EF")
 
