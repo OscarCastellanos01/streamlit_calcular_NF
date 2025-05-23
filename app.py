@@ -50,10 +50,10 @@ st.markdown(
 # 5) Entradas en la barra lateral
 st.sidebar.header("🔧 Parámetros de Entrada")
 parciales = st.sidebar.number_input(
-    "Puntaje en Parciales", min_value=0, max_value=30, value=15
+    "Puntaje en Parciales", min_value=0, max_value=30, value=26
 )
 a_val     = st.sidebar.number_input(
-    "Puntaje en A", min_value=0, max_value=30, value=15
+    "Puntaje en A", min_value=0, max_value=30, value=24
 )
 btn       = st.sidebar.button("▶️ Predecir EF")
 
