@@ -26,7 +26,9 @@ def load_model_and_scaler(model_path, scaler_path):
 
 @st.cache_data
 def load_dataset(path):
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, sep=';', encoding='utf-8')
+    df.columns = df.columns.str.strip().str.capitalize()
+    df = df.rename(columns={'Actividad': 'A', 'Ef': 'EF'})
     return df
 
 model, scaler = load_model_and_scaler(MODEL_PATH, SCALER_PATH)
