@@ -14,8 +14,8 @@ st.set_page_config(
 )
 
 # 2) Cargar modelo y datos
-MODEL_PATH  = "modelo_notas.h5"
-SCALER_PATH = "scaler_notas.pkl"
+MODEL_PATH  = "models/modelo_notas.h5"
+SCALER_PATH = "scaler/scaler_notas.pkl"
 DATA_PATH   = "data/notas_estudiantes.csv"
 
 @st.cache_data
@@ -75,6 +75,6 @@ if btn:
         value=f"[{lower:.1f}, {upper:.1f}]"
     )
 
-# 7) Mostrar tabla de datos originales (opcional)
+# 7) Mostrar tabla de datos originales
 with st.expander("📋 Ver datos de entrenamiento"):
     st.dataframe(df, use_container_width=True)
