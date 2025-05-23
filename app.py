@@ -20,7 +20,7 @@ DATA_PATH   = "data/notas_estudiantes.csv"
 
 @st.cache_data
 def load_model_and_scaler(model_path, scaler_path):
-    model   = tf.keras.models.load_model(model_path)
+    model  = tf.keras.models.load_model(model_path, compile=False)
     scaler  = joblib.load(scaler_path)
     return model, scaler
 
